@@ -1,9 +1,16 @@
 = simple_form_for @pic, html: { multipart: true} do |f|
+	.row
+	.col-xs-8 
+	.col-xs-offset-2
+	.panel 
+	.panel-danger
+	.panel-heading
 	- if @pic.errors.any?
 		#error
-			%h2
+			%h2.panel-title
 			= pluralize(@pic.errors.count, "error")
 			prevented this Pic from saving
+			.panel-body
 			%ul
 				-@pic.errors.full_message.each do |msg|
 					%li= msg

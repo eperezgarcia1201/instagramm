@@ -3,6 +3,7 @@ class PicsController < ApplicationController
 	
 
 	def index
+		@pics = Pic.all.order ('created_at DESC')
 	end
 	def show 
 		
@@ -27,10 +28,18 @@ class PicsController < ApplicationController
 	end
 
 	def update
+		if @pic.update(pic_params)
+			redirect_to @pic, notice: "was updated"
+
+		else
+			render 'edit'
+		end
 
 	end
 
 	def destroy
+		@pic.destroy
+		redirect_to root_path, notice: "successfully deleted"
 
 	end
 
