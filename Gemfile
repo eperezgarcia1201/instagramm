@@ -28,6 +28,7 @@ gem 'haml', '~> 4.0'
 gem 'simple_form', '~> 3.2'
 gem 'devise'
 gem 'paperclip', '~> 4.2.0'
+gem 'masonry-rails', '~> 0.2.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
